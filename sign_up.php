@@ -23,5 +23,5 @@ $address=$_POST['address'];
 	mysqli_query($conn,$INSERT);}
 	else
 	{
-		echo"<script>alert("Password does not match")</script>";
+		echo"<script>alert('Password does not match')</script>";
 	}
