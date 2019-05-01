@@ -16,6 +16,7 @@ else
 if (isset($_POST['logout']))
 {
 	session_destroy();
+	echo "<br><br>User has been logged out, please refresh the page.";
 }
 
 ?>
