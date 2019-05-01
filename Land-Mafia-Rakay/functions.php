@@ -55,7 +55,7 @@
 		if(isset($_SESSION['username']))
 		{
 			//Just a check to see if sessions are working
-			echo $_SESSION['username'] . " from the session value from the start\n";
+			//echo $_SESSION['username'] . " from the session value from the start\n";
 		}
 
 		if(isset($_POST['login']))
