@@ -59,7 +59,7 @@ sign_up();
 
   <div class="signin">
 
-        <p>Already have an account? <a href="Login.html">Sign in</a>.</p>
+        <p>Already have an account? <a href="Login.php">Sign in</a>.</p>
   </div>
   <div class="col-md-4 col-lg-4 col-sm-2 col-xs-1">
   </div>

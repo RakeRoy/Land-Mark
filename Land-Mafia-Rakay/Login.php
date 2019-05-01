@@ -1,3 +1,10 @@
+<?php
+include "db.php";
+include "functions.php";
+login();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +22,7 @@
 
   <h2>Login</h2>
 
-  <form action="/action_page.php">
+  <form action="login.php" method="POST">
 
     <div class="container">
       <div class="row">
@@ -25,30 +32,20 @@
           
           <div class="col-md-4 col-lg-4 col-sm-8 col-xs-10">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
         
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+          <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-            <button type="submit">Login</button>
+            <input type="submit" name='login' style="width:100%; height: 70px; background-color: green;">
 
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
-          <span class="signup">Not a member yet?<a href="Register.html"> Sign up! </a> </span>
-        </div>
-        <div class="col-md-4 col-lg-4 col-sm-2 col-xs-1">
-        </div>
-      </div>
-    </div>
+          <span class="signup">Not a member yet?<a href="Register.php"> Sign up! </a> </span>
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-lg-4 col-sm-2 col-xs-1">
-        </div>
-        <div class="col-md-4 col-lg-4 col-sm-8 col-xs-10">
           <button type="button" class="cancelbtn">Cancel</button>
           <span class="psw"><a href="#">Forgot password?</a></span>
       </div>
