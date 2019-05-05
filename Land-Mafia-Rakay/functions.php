@@ -22,7 +22,15 @@
 
 			$connection = mysqli_connect($host, $dbUsername, $dbPassword, $dbname);
 
-			if($password==$r_password)
+			$check = "SELECT * FROM `users` WHERE username = '$username'";
+			$result = mysqli_query($connection, $check);
+
+			$rows=mysqli_num_rows($result);
+			if ($rows>=1)
+			{
+				echo"<script>alert('Username Already exists')</script>";
+			} 
+			elseif($password==$r_password)
 			{
 				$username =  mysqli_real_escape_string($connection, $username);
 				$password =  mysqli_real_escape_string($connection, $password);
@@ -34,10 +42,10 @@
 				$password = crypt($password, $hashF_and_salt);
 				$r_password=$password;
 
-
 				$INSERT ="INSERT INTO `users`(`username`, `email`, `password`, `r_password`, `city`, `address`) VALUES ('$username','$email','$password','$r_password','$city','$address')";
 
 				mysqli_query($connection,$INSERT);
+				header("Location: Login.php");
 			}
 			else
 			{
@@ -84,7 +92,7 @@
 		  {
 		    $_SESSION['username']=$username;
 		    echo $_SESSION['username'] . " has been set as username";
-		    header("Location: logout.php");
+		    header("Location: south/listings.php");
 		    exit();
 		  } 
 		  else

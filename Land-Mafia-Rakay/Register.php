@@ -51,7 +51,7 @@ sign_up();
         <hr>
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-        <input type="submit" name='submit' class="registerbtn">Register</input>
+        <input type="submit" name='submit' Value="Register" class="registerbtn"></input>
 
 
     </div>

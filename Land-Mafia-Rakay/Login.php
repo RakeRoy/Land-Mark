@@ -38,7 +38,8 @@ login();
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-            <input type="submit" name='login' style="width:100%; height: 70px; background-color: green;">
+          <p></p>
+          <p><input type="submit" name='login' value = "Login" style="width:100%; height: 65px;  background-color:            #5EB762; color:white;">  </p>
 
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
