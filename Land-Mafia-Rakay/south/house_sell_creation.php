@@ -1,11 +1,11 @@
 <?php
 
 include'../db.php';
-
+session_start();
 //if (isset)
 
 
-$ownerName= $_POST['owner_name'];
+$ownerName= $_SESSION['username'];
 $ownerPhone= $_POST['owner_ph'];
 $price= $_POST['price'];
 $area= $_POST['area'];

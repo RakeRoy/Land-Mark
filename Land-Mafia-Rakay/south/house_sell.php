@@ -277,8 +277,8 @@ input[type=text]:focus, input[type=password]:focus {
 
             <form action="house_sell_creation.php" method = "POST" enctype="multipart/form-data">
 
-            <label class="label" for="Name" >Owner's Name</label>
-            <input type="text" name = "owner_name" id="Name" value="<?php echo $username; ?>" placeholder="Enter Name">
+            <!-- <label class="label" for="Name" >Owner's Name</label>
+            <input type="text" name = "owner_name" id="Name" value="<?php //echo $username; ?>" placeholder="Enter Name"> -->
 
             <label class="label" for="Phone"> Phone Number </label>
             <input type="text" name = "owner_ph" id="Phone" placeholder="Enter Phone Number">

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -201,7 +202,7 @@ $result=mysqli_query($connection,$sql);
 
 foreach($result as $data)
 {
-
+// $data['id']=$_SESSION['id'];
     echo"
 
                 <!-- Single Featured Property -->
@@ -212,8 +213,16 @@ foreach($result as $data)
                             <img style='width:100%; height:200px' src='../images/".$data['id'].".jpg'  alt=''>
 
                             <div class='tag'>
-                                <span>For Sale</span>
-                            </div>
+                                <span>For Sale</span>";
+                                if(isset($_SESSION['username']))
+                                {
+                                    if($_SESSION['username']==$data['owner_name'] || $_SESSION['username'] == 'Admin')
+                                    {
+                                        echo "<a href='../DeleteOne.php?id=".$data['id']."'><img align='right' style='width:30px; height:30px;'src='img/icons/delete.png'></a>";
+                                    }
+                                }
+                            echo"</div>
+
                             <div class='list-price'>
                                 <p>Rs.". $data['house_price']. "</p>
                             </div>

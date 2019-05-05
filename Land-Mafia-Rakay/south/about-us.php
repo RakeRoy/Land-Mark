@@ -390,7 +390,7 @@
                             <div class="section-heading">
                                 <img src="img/icons/prize.png" alt="">
                                 <h2>Rakay Shahid</h2>
-                                <p>Leader, Front End Designer, Developer, Back End Designer</p>
+                                <p>Leader, Front End Designer, Developer, Back End Developer, Database Manager</p>
                             </div>
                             <div class="address">
                                 <h6><img src="img/icons/phone-call.png" alt=""> +92 306 6678376</h6>
