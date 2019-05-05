@@ -7,3 +7,15 @@ CREATE TABLE LAND_MAFIA
  city varchar(50),
  address varchar (200)
 );
+
+
+CREATE table house_sell(
+id int PRIMARY KEY AUTO_INCREMENT,
+    owner_name varchar(20),
+    owner_ph varchar(20),
+    house_price varchar(20),
+    marla_sq_ft int(30),
+    title varchar(50),
+    description varchar(100),
+    location varchar(50)
+);
