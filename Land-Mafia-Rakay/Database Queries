@@ -9,6 +9,7 @@ CREATE TABLE LAND_MAFIA
 );
 
 
+
 CREATE table house_sell(
 id int PRIMARY KEY AUTO_INCREMENT,
     owner_name varchar(20),
@@ -16,6 +17,6 @@ id int PRIMARY KEY AUTO_INCREMENT,
     house_price varchar(20),
     marla_sq_ft int(30),
     title varchar(50),
-    description varchar(250),
-    location varchar(100)
+    description varchar(100),
+    location varchar(50)
 );
