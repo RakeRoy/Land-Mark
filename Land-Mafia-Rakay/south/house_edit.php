@@ -1,5 +1,17 @@
 <?php
+include "../db.php";
+
 session_start();
+
+$id=$_GET['id'];
+$_SESSION['IDD']=$id;
+//echo "Sup ". $id;
+$query="SELECT * FROM `house_sell` WHERE id = '$id'";
+$result = mysqli_query($connection, $query);
+$data = mysqli_fetch_assoc($result);
+
+//header("Location: south/listings.php");
+
 if(!isset($_SESSION['username']))
 {
     echo"<script>alert('You need to login first')</script>";
@@ -15,7 +27,6 @@ $username = $_SESSION['username']
 <!Doctype html>
 <html>
 <head>
-
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +34,7 @@ $username = $_SESSION['username']
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Create Post</title>
+    <title>Edit</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -290,30 +301,30 @@ input[type=text]:focus, input[type=password]:focus {
 
         <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10"> 
 
-            <form action="house_sell_creation.php" method = "POST" enctype="multipart/form-data">
+            <form action="house_edit_creation.php" method = "POST" enctype="multipart/form-data">
 
             <!-- <label class="label" for="Name" >Owner's Name</label>
             <input type="text" name = "owner_name" id="Name" value="<?php //echo $username; ?>" placeholder="Enter Name"> -->
 
             <label class="label" for="Phone"> Phone Number </label>
-            <input type="text" name = "owner_ph" id="Phone" placeholder="Enter Phone Number" required>
+            <input type="text" name = "owner_ph" id="Phone" placeholder="Enter Phone Number" value ='<?php  echo $data['owner_ph'] ?>'required>
 
             <label class="label" for="price"> Price </label>
-            <input type="text" name = "price" id="price" placeholder="Enter Price in Rs." required>
+            <input type="text" name = "price" id="price" placeholder="Enter Price in Rs." value ='<?php  echo $data['house_price'] ?>' required>
 
             <label class="label" for="area"> House Size </label>
-            <input type="text" name = "area" id ="area" placeholder="Enter Size in Sq Ft." required>
+            <input type="text" name = "area" id ="area" placeholder="Enter Size in Sq Ft." value ='<?php  echo $data['marla_sq_ft'] ?>' required>
 
 
             <label class="label" for="title"> Title: </label>
-            <input type="text" name = "title" id="title" placeholder="Enter Post Title" required>
+            <input type="text" name = "title" id="title" placeholder="Enter Post Title" value ='<?php  echo $data['title'] ?>' required>
 
 
             <label class="label" for="description"> Description </label>
-            <textarea name = "description" id="description" placeholder="Enter Short Description of What You Are Selling i.e. 2 Bathrooms, 2 Bedrooms etc."required></textarea>
+            <input type='text' name = "description" id="description" style='height:150px;' placeholder="Enter Short Description of What You Are Selling i.e. 2 Bathrooms, 2 Bedrooms etc." value ='<?php  echo $data['description'] ?>' required></input>
 
             <label class="label" for="location"> Location </label>
-            <input type="text" name = "location" id="location" placeholder="Enter Address of Property" required>
+            <input type="text" name = "location" id="location" placeholder="Enter Address of Property" value ='<?php  echo $data['location'] ?>' required>
 
 
             <label> Image upload </label>

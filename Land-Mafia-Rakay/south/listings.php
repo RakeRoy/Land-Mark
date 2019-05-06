@@ -218,7 +218,8 @@ foreach($result as $data)
                                 {
                                     if($_SESSION['username']==$data['owner_name'] || $_SESSION['username'] == 'Admin')
                                     {
-                                        echo "<a href='../DeleteOne.php?id=".$data['id']."'><img align='right' style='width:30px; height:30px;'src='img/icons/delete.png'></a>";
+                                        echo "<a href='house_edit.php?id=".$data['id']."'><img align='right' style='width:30px; height:30px; margin-left:10px;'src='img/icons/edit.png' alt='Edit'></a>";
+                                        echo "<a href='../DeleteOne.php?id=".$data['id']."'><img align='right' style='width:30px; height:30px;'src='img/icons/delete.png' alt='Delete'></a>";
                                     }
                                 }
                             echo"</div>
